@@ -1,0 +1,36 @@
+#Simple Devops Project
+#Simple CI/CD Project
+#Integrate Git,jenkins,Maven with tomcat server
+
+Step 1:-we have to install git,jenkins,mavenin one VM and tomcat server in another VM,to install this application please follow the 	instruction which is given in our "Devops_configure" repo.
+
+Step 2:-After installing all the application ,you have to install plugin like "github,invoke maven,container to deploy" push your code in your github repositry this project is run through maven so we need pom.xml file to build the application with your code.
+
+Step 3:-After pushing your project into github repo then your have to create simple freestyle project in jenkins.
+
+Step 4:-After creating freestyle project you have to provide the github repo path in "Source code management " in project configuration.then select "pol SCM" option using this option we perform CI(Contineus Integration).
+
+Step 5:- in "Pol SCM" we have enter five stars like this "* * * * *" 
+1st * represent ==> every min
+2nd * represent ==> every hrs
+3rd * represent ==> every day
+4th * represent ==> every week
+5th * represent ==> every month
+
+means every mins,every hrs,every day,every week,every month they pipline check automatically new commit is done or not.if done then its build that project.
+
+Step 6:- in "Build " you have option 'Goals and option' in that you write "clean install package".
+
+Step 7:- Provide tomcat creadentials in "globle creadentials option" in jenkins.
+
+Step 8:- set java,maven,git path "Go to Manage Jenkins->Global tool configuration->Maven -> Add Maven_home variable value (i.e. path of the maven file on your system)"
+
+Step 9:- in project configure select "deploy to container " in Post-build Actions,in that you have to provide the path of your .rar/.war file if you don't know then simple put "**/*.war".
+
+Step 10:- after it select the containers(Servers) then provide the credentials and URL then save and apply it.
+
+ 
+
+
+ 
+	
